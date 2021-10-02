@@ -154,24 +154,25 @@ export default class CommonVideo extends Component {
 
   _closeFullScreen = () => {
     let { closeFullScreen, BackHandle, Orientation } = this.props;
-    if (this._componentMounted) {
-      this.setState({ isFull: false, currentVideoAspectRatio: deviceWidth + ":" + this.initialHeight, });
-    }
-    BackHandle && BackHandle.removeBackFunction(_fullKey);
-    Orientation && Orientation.lockToPortrait();
-    StatusBar.setHidden(false);
+  //  if (this._componentMounted) {
+    //  this.setState({ isFull: false, currentVideoAspectRatio: deviceWidth + ":" + this.initialHeight, });
+   // }
+   // BackHandle && BackHandle.removeBackFunction(_fullKey);
+   // Orientation && Orientation.lockToPortrait();
+   // StatusBar.setHidden(false);
     //StatusBar.setTranslucent(false);
-    this._componentMounted && closeFullScreen && closeFullScreen();
+   // this._componentMounted && closeFullScreen && closeFullScreen();
+    closeFullScreen && closeFullScreen();
   };
 
   _toFullScreen = () => {
     let { startFullScreen, BackHandle, Orientation } = this.props;
     //StatusBar.setTranslucent(true);
-    this.setState({ isFull: true, currentVideoAspectRatio: deviceHeight + ":" + deviceWidth, });
-    StatusBar.setHidden(true);
-    BackHandle && BackHandle.addBackFunction(_fullKey, this._closeFullScreen);
+  //  this.setState({ isFull: true, currentVideoAspectRatio: deviceHeight + ":" + deviceWidth, });
+  //  StatusBar.setHidden(true);
+   // BackHandle && BackHandle.addBackFunction(_fullKey, this._closeFullScreen);
     startFullScreen && startFullScreen();
-    Orientation && Orientation.lockToLandscape && Orientation.lockToLandscape();
+ //   Orientation && Orientation.lockToLandscape && Orientation.lockToLandscape();
   };
 
   _onLayout = (e) => {
